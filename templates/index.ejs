@@ -4,8 +4,47 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Blockchain Ticker Lookup</title>
+	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-	
+	<main>
+		<div class="block header">
+			<h1>Blockchain Ticker Lookup</h1>
+			<p>
+				This website is designed to let you look up the conversion rate
+				between a given cryptocurrency and US dollars. You can use the
+				form below to continue.
+			</p>
+		</div>
+		<% if (error) { %>
+			<div class="block error">
+				<h2>An error occurred.</h2>
+				<p>
+					Unfortunately, an error occurred while trying to serve your request.
+					Please make sure your symbol is valid and try again.
+				</p>
+			</div>
+		<% } else if (success) { %>
+			<div class="block success">
+				<h2>Success!</h2>
+				<p>
+					We were able to fetch the price of the symbol you specified (<%= symbol %>).
+					The average price of <%= symbol %> over the last 24 hours has been $<%= data.price_24h %>.
+				</p>
+			</div>
+		<% } %>
+		<div class="block">
+			<h2>Ticker Information</h2>
+			<p>
+				Enter the relevant information about the symbol below to look it up.
+			</p>
+			<form action="/" method="get">
+				<label for="ticker-input">Ticker Symbol (e.g BTC): </label>
+				<input type="text" name="symbol" id="symbol-input" required>
+
+				<input type="submit" value="Look Up" id="submit-button">
+			</form>
+		</div>
+	</main>
 </body>
 </html>

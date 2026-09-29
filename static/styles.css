@@ -1,0 +1,50 @@
+body, html {
+	margin: 0px;
+	padding: 0px;
+	background-color: beige;
+
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+main {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	align-items: center;
+}
+
+.header {
+	margin-top: 15px;
+}
+
+.block {
+	padding: 0px 30px 15px 30px;
+	margin-bottom: 15px;
+
+	width: 100%;
+	max-width: min(80vw, 768px);
+
+	background-color: white;
+	border: 1px solid black;
+}
+
+.error {
+	border: 5px solid red;
+	background-color: darkred;
+	color: white;
+}
+
+.success {
+	border: 5px solid lime;
+	background-color: green;
+	color: white;
+}
+
+#submit-button {
+	display: block;
+	margin-left: auto;
+}
